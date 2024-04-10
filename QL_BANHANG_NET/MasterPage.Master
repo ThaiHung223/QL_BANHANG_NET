@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="QL_BANHANG_NET.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <asp:DataList ID="dl_loaihang" runat="server">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai") %>'></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </td>
+                    <td>
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td>
+                        <asp:Panel ID="pnlLogin" runat="server">
+                            <asp:TextBox ID="txtTendangnhap" runat="server" placeholder="Tên đăng nhập"></asp:TextBox><br />
+                            <asp:TextBox ID="txtMatkhau" runat="server" TextMode="Password" placeholder="Mật khẩu"></asp:TextBox><br />
+                            <asp:CheckBox ID="chkRememberMe" runat="server" Text="Nhớ tài khoản" /><br />
+                            <asp:Button ID="btnLogin" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" />
+                        </asp:Panel>
+                        <asp:Panel ID="pnlLoggedIn" runat="server" Visible="false">
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>
